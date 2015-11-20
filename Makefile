@@ -40,11 +40,11 @@ all: librf24mesh
 
 # Make the library
 librf24mesh: RF24Mesh.o
-	g++ -shared -Wl,-soname,$@.so.1 ${CCFLAGS} -o ${LIBNAME_RFN} $^ 
+	arm-linux-gnueabihf-g++ -shared -Wl,-soname,$@.so.1 ${CCFLAGS} -o ${LIBNAME_RFN} $^ 
 
 # Library parts
 RF24Mesh.o: RF24Mesh.cpp
-	g++ -Wall -fPIC ${CCFLAGS} -c $^
+	arm-linux-gnueabihf-g++ -Wall -fPIC ${CCFLAGS} -c $^
 
 # clear build files
 clean:
